@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="xscrapy@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="xscrapy">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="quickstart"/>
+    <schema id="7" parent="1" name="spring-data"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="xblog"/>
+    <schema id="10" parent="1" name="xflask"/>
+    <schema id="11" parent="1" name="xgolang"/>
+    <schema id="12" parent="1" name="xpython"/>
+    <table id="13" parent="2" name="article"/>
+    <column id="14" parent="13" name="title">
+      <Position>1</Position>
+      <Comment>文章标题</Comment>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="13" name="url">
+      <Position>2</Position>
+      <Comment>文章的url</Comment>
+      <DataType>varchar(300)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="13" name="url_object_id">
+      <Position>3</Position>
+      <Comment>文章的url经过MD5散列后的值</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="13" name="date">
+      <Position>4</Position>
+      <Comment>文章的发布日期</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="18" parent="13" name="content">
+      <Position>5</Position>
+      <Comment>文章正文</Comment>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="13" name="image_url">
+      <Position>6</Position>
+      <Comment>文章配图的url</Comment>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <column id="20" parent="13" name="image_path">
+      <Position>7</Position>
+      <Comment>文章配图本地存放路径</Comment>
+      <DataType>varchar(300)|0</DataType>
+    </column>
+    <column id="21" parent="13" name="tags">
+      <Position>8</Position>
+      <Comment>文章分类信息</Comment>
+      <DataType>varchar(150)|0</DataType>
+    </column>
+    <column id="22" parent="13" name="admiration_num">
+      <Position>9</Position>
+      <Comment>点赞数</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="23" parent="13" name="collection_num">
+      <Position>10</Position>
+      <Comment>收藏数</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="24" parent="13" name="comment_num">
+      <Position>11</Position>
+      <Comment>评论数</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="25" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>url_object_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
